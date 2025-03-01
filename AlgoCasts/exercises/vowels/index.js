@@ -8,9 +8,13 @@
 //   vowels('Why?') --> 0
 
 function vowels(str) {
+	return (str.match(/[aeiou]/gi) || []).length;
+}
+
+function vowelsIterative(str) {
 	let vowelsCount = 0;
-	for (let i of str) {
-		if (['a', 'e', 'i', 'o', 'u'].includes(i.toLowerCase())) {
+	for (let i of str.toLowerCase()) {
+		if ('aeiou'.includes(i)) {
 			vowelsCount++;
 		}
 	}
